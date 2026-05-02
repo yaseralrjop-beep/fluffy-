@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فكّر قبل ما تمرّر</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0d0d1a;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #111;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-buttons button {
+  margin: 5px;
+  padding: 8px 15px;
+  background: transparent;
+  border: 1px solid orange;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.nav-buttons button:hover {
+  background: orange;
+  color: black;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(#0d0d1a, #1a1a40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  color: #ff4d4d;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: red;
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1a1a40;
+  margin: 10px;
+  padding: 20px;
+  width: 150px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: #292966;
+}
+
+/* Stories */
+.story {
+  background: #222;
+  margin: 10px;
+  padding: 20px;
+  border-left: 5px solid red;
+}
+
+/* Quiz */
+#quiz button {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Inputs */
+input, textarea {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+  padding: 10px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h2>فكّر قبل ما تمرّر</h2>
+  <div class="nav-buttons">
+    <button onclick="scrollToSection('about')">عن الموقع</button>
+    <button onclick="scrollToSection('risks')">المخاطر</button>
+    <button onclick="scrollToSection('stories')">قصص</button>
+    <button onclick="scrollToSection('tips')">نصائح</button>
+    <button onclick="scrollToSection('quiz')">اختبار</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1>فكّر قبل ما تمرّر</h1>
+    <p>السوشيال ميديا مش دايمًا بريئة… خذ لحظة وفكّر</p>
+    <button onclick="scrollToSection('about')">اكتشف أكثر</button>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <h2>عن الموقع</h2>
+  <p>هذا الموقع يهدف لتوعية الشباب بمخاطر السوشيال ميديا بطريقة حديثة وتفاعلية.</p>
+</section>
+
+<!-- Risks -->
+<section id="risks">
+  <h2>المخاطر</h2>
+  <div class="cards">
+    <div class="card">📱<h3>الإدمان</h3><p>تضييع وقت كبير</p></div>
+    <div class="card">🧠<h3>الصحة النفسية</h3><p>توتر واكتئاب</p></div>
+    <div class="card">🔒<h3>الخصوصية</h3><p>خطر تسريب البيانات</p></div>
+    <div class="card">💬<h3>التنمر</h3><p>تعليقات مؤذية</p></div>
+    <div class="card">📰<h3>الأخبار الكاذبة</h3><p>معلومات مضللة</p></div>
+  </div>
+</section>
+
+<!-- Stories -->
+<section id="stories">
+  <h2>قصص حقيقية</h2>
+  <div class="story">"كنت أضيع 8 ساعات يوميًا على السوشيال..."</div>
+  <div class="story">"تعرضت للتنمر بسبب صورة..."</div>
+</section>
+
+<!-- Tips -->
+<section id="tips">
+  <h2>نصائح</h2>
+  
+  <ul class="custom-list">
+  <li>⏱️ حدد وقت يومي</li>
+  <li>🧠 لا تصدق كل شيء</li>
+  <li>🔒 احمِ بياناتك</li>
+  <li>💬 ابتعد عن السلبية</li>
+</ul>
+</section>
+
+<!-- Quiz -->
+<section id="quiz">
+  <h2>اختبر نفسك</h2>
+  <p>كم ساعة تستخدم السوشيال يوميًا؟</p>
+
+  <button onclick="checkQuiz(1)">أقل من ساعتين</button>
+  <button onclick="checkQuiz(2)">3-5 ساعات</button>
+  <button onclick="checkQuiz(3)">أكثر من 6 ساعات</button>
+
+  <p id="result"></p>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>تواصل معنا</h2>
+
+  <form onsubmit="sendMessage(event)">
+    <input type="text" placeholder="اسمك" required>
+    <textarea placeholder="اكتب ملاحظتك" required></textarea>
+    
+    <button type="submit">إرسال</button>
+  </form>
+
+  <p id="msg" style="color: lightgreen;"></p>
+
+  <p>📧 البريد الإلكتروني: example@email.com</p>
+</section>
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function checkQuiz(level) {
+  let result = document.getElementById("result");
+
+  if (level === 1) {
+    result.innerText = "👍 ممتاز";
+    result.style.color = "lightgreen";
+  } else if (level === 2) {
+    result.innerText = "⚠️ انتبه";
+    result.style.color = "orange";
+  } else {
+    result.innerText = "🚨 خطر";
+    result.style.color = "red";
+  }
+}
+</script>
+
+</body>
+</html>

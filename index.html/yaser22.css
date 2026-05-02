@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0d0d1a;
+  color: white;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #111;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+li::before {
+  content: "⚠️";
+  margin-left: 8px;
+}
+li:nth-child(1)::before { content: "⏱️"; }
+li:nth-child(2)::before { content: "🧠"; }
+li:nth-child(3)::before { content: "🔒"; }
+li:nth-child(4)::before { content: "💬"; }
+.custom-list {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.custom-list li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(#0d0d1a, #1a1a40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  color: #ff4d4d;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: red;
+}
+
+/* Sections */
+section {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1a1a40;
+  margin: 10px;
+  padding: 20px;
+  width: 150px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: #292966;
+}
+
+/* Stories */
+.story {
+  background: #222;
+  margin: 10px;
+  padding: 20px;
+  border-left: 5px solid red;
+}
+
+/* Quiz */
+#quiz button {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Inputs */
+input, textarea {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+  padding: 10px;
+}
+
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
